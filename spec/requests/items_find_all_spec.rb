@@ -27,9 +27,12 @@ RSpec.describe 'the Item search' do
     end
 
     describe 'search by min price' do 
-      it 'searches for all items above a price' do 
+      before(:each) do 
         create_list(:item, 10, merchant_id: merchant.id)
-        expected_items = @items.select { |item| item.unit_price >= 50 }
+      end
+
+      it 'searches for all items above a price' do 
+        expected_items = Item.where('unit_price >= 50')
 
         get '/api/v1/items/find_all', params: {min_price: 50}
 
@@ -39,6 +42,37 @@ RSpec.describe 'the Item search' do
 
         expect(expected_items.count).to eq(json[:data].count)
       end
+
+      it 'searches for all items below a price' do 
+        expected_items = Item.where('unit_price <= 50')
+
+        get '/api/v1/items/find_all', params: {max_price: 50}
+
+        json = JSON.parse(response.body, symbolize_names: true)
+        # require 'pry'; binding.pry
+
+        expect(response).to have_http_status(200)
+
+        expect(expected_items.count).to eq(json[:data].count)
+      end
+
+      it 'searches for all items in between two prices' do 
+        expected_items = Item.where('unit_price <= 75').where('unit_price >= 25')
+
+        get '/api/v1/items/find_all', params: {max_price: 75, min_price: 25}
+
+        json = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to have_http_status(200)
+
+        expect(expected_items.count).to eq(json[:data].count)
+      end
+    end
+
+    describe 'sad paths' do 
+      it 'max price cannot be negative'
+      it 'min price cannot be negative'
+      it 'cannot send name and min or max price'
     end
   end
 end
