@@ -1,6 +1,27 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/sean/turing/m3/projects/rails-engine/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/sean/turing/m3/projects/rails-engine/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/sean/turing/m3/projects/rails-engine/app/models/merchant.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/sean/turing/m3/projects/rails-engine/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -11,9 +32,8 @@
         "branches": {
         }
       },
-      "/Users/sean/turing/m3/projects/rails-engine/app/models/application_record.rb": {
+      "/Users/sean/turing/m3/projects/rails-engine/app/models/customer.rb": {
         "lines": [
-          0,
           0,
           0
         ],
@@ -57,6 +77,6 @@
         }
       }
     },
-    "timestamp": 1670285933
+    "timestamp": 1670290722
   }
 }
