@@ -80,11 +80,11 @@ RSpec.describe 'Items API' do
     end
   end
 
-  describe 'GET /api/v1/items/:id/merchants' do 
+  describe 'GET /api/v1/items/:id/merchant' do 
     it 'shows the merchant that is related to an item' do 
       item = items.first
 
-      get "/api/v1/items/#{item.id}/merchants"
+      get "/api/v1/items/#{item.id}/merchant"
       json = JSON.parse(response.body, symbolize_names: true)
       
       expect(response).to have_http_status(200)
