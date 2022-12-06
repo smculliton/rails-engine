@@ -42,7 +42,7 @@ RSpec.describe 'Items API' do
       post '/api/v1/items/', headers: headers, params: item_params.to_json
       created_item = Item.last
 
-      expect(response).to have_http_status(200)
+      expect(response).to have_http_status(201)
 
       expect(created_item.name).to eq(item_params[:name])
       expect(created_item.description).to eq(item_params[:description])
