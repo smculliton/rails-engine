@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/sean/turing/m3/projects/rails-engine/app/models/item.rb": {
+      "/Users/sean/turing/m3/projects/rails-engine/app/models/merchant.rb": {
         "lines": [
           1,
           1,
@@ -15,10 +15,37 @@
           null
         ]
       },
-      "/Users/sean/turing/m3/projects/rails-engine/app/models/merchant.rb": {
+      "/Users/sean/turing/m3/projects/rails-engine/app/models/item.rb": {
         "lines": [
           1,
           1,
+          null
+        ]
+      },
+      "/Users/sean/turing/m3/projects/rails-engine/app/controllers/api/v1/merchants/items_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/sean/turing/m3/projects/rails-engine/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/sean/turing/m3/projects/rails-engine/app/serializers/item_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
           null
         ]
       },
@@ -40,6 +67,18 @@
         "branches": {
         }
       },
+      "/Users/sean/turing/m3/projects/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          null,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/sean/turing/m3/projects/rails-engine/app/jobs/application_job.rb": {
         "lines": [
           0,
@@ -48,8 +87,18 @@
         "branches": {
         }
       },
-      "/Users/sean/turing/m3/projects/rails-engine/app/controllers/application_controller.rb": {
+      "/Users/sean/turing/m3/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
           0,
           0
         ],
@@ -77,6 +126,6 @@
         }
       }
     },
-    "timestamp": 1670290722
+    "timestamp": 1670295566
   }
 }
