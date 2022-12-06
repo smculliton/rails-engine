@@ -69,12 +69,27 @@ RSpec.describe 'Items API' do
   end
 
   describe 'DELETE /api/v1/items/:id' do 
-    it 'deletes a single item' do 
-      
+    it 'destroys a single item' do 
+      item = items.first
+
+      delete "/api/v1/items/#{item.id}"
+
+      expect(response).to have_http_status(204)
+      expect(Item.count).to eq(4)
+      expect{ Item.find(item.id) }.to raise_error(ActiveRecord::RecordNotFound)
     end
   end
 
   describe 'GET /api/v1/items/:id/merchants' do 
+    it 'shows the merchant that is related to an item' do 
+      item = items.first
 
+      get "/api/v1/items/#{item.id}/merchants"
+      json = JSON.parse(response.body, symbolize_names: true)
+      
+      expect(response).to have_http_status(200)
+      expect(json[:data]).to have_key(:attributes)
+      expect(json[:data][:attributes][:name]).to eq(merchant.name)
+    end
   end
 end

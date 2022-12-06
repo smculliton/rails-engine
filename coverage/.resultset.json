@@ -22,32 +22,10 @@
           null
         ]
       },
-      "/Users/sean/turing/m3/projects/rails-engine/app/controllers/api/v1/items_controller.rb": {
+      "/Users/sean/turing/m3/projects/rails-engine/app/controllers/api/v1/items/merchants_controller.rb": {
         "lines": [
           1,
           1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          0,
-          0,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
           1,
           1,
           null,
@@ -60,7 +38,7 @@
           null
         ]
       },
-      "/Users/sean/turing/m3/projects/rails-engine/app/serializers/item_serializer.rb": {
+      "/Users/sean/turing/m3/projects/rails-engine/app/serializers/merchant_serializer.rb": {
         "lines": [
           1,
           1,
@@ -88,7 +66,7 @@
         "branches": {
         }
       },
-      "/Users/sean/turing/m3/projects/rails-engine/app/serializers/merchant_serializer.rb": {
+      "/Users/sean/turing/m3/projects/rails-engine/app/serializers/item_serializer.rb": {
         "lines": [
           0,
           0,
@@ -139,6 +117,45 @@
         "branches": {
         }
       },
+      "/Users/sean/turing/m3/projects/rails-engine/app/controllers/api/v1/items_controller.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/Users/sean/turing/m3/projects/rails-engine/app/channels/application_cable/connection.rb": {
         "lines": [
           0,
@@ -160,6 +177,6 @@
         }
       }
     },
-    "timestamp": 1670345992
+    "timestamp": 1670347502
   }
 }
