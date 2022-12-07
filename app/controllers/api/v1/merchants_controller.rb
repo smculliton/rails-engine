@@ -5,7 +5,9 @@ class Api::V1::MerchantsController < ApplicationController
   end
 
   def show
-    merchant = Merchant.find(params[:id])
+    merchant = Merchant.find_by(id: params[:id])
+    return render json: { error: 'Merchant id not found' }, status: 404 if merchant.nil?
+    
     render json: MerchantSerializer.new(merchant)
   end
 end
