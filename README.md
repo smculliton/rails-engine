@@ -2,4 +2,6 @@
 
 TO DO 
 - Sad Path Testing Checklist
-  - items find all spec
+- Testing to 100%
+- Work on edge cases
+- Refactor
