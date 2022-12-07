@@ -100,11 +100,11 @@ RSpec.describe 'the Merchants API' do
 
     context 'merchant doesnt exist' do 
       it 'returns error message and status 404' do 
-        get "/api/v1/merchants/#{@merchants.last.id + 1}/items"
+        get "/api/v1/merchants/#{@merchants.last.id + 20}/items"
         json = JSON.parse(response.body, symbolize_names: true)
-
+        
         expect(response).to have_http_status(404)
-        expect(json[:error]).to eq('Merchant id not found')
+        expect(json[:errors]).to eq('Merchant id not found')
       end
     end
   end
