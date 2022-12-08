@@ -1,4 +1,6 @@
 class Api::V1::ItemsController < ApplicationController
+  after_action :destroy_empty_invoices, only: :destroy
+
   def index 
     items = Item.all
     render json: ItemSerializer.new(items)
@@ -37,6 +39,12 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   private
+
+  def destroy_empty_invoices
+    Invoice.all.each do |invoice|
+      invoice.destroy if invoice.invoice_items.empty?
+    end
+  end
 
   def item_params
     params.require(:item).permit(:name, :description, :unit_price, :merchant_id)

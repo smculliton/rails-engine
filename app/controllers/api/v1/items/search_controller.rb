@@ -1,5 +1,4 @@
 class Api::V1::Items::SearchController < ApplicationController
-
   def index
     if Item.invalid_search_params?(max_price, min_price, name) # || params[:name].empty?
       return render json: { errors: 'Invalid search parameters' }, status: 400

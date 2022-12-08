@@ -81,6 +81,22 @@ RSpec.describe 'Items API' do
         expect(response).to have_http_status(404)
         expect(json[:error]).to eq('Invalid item params')
       end
+
+      it 'sends 404 if there are missing attributes' do 
+        item_params = {
+          name: 'A Thing',
+          description: 'A really cool thing',
+          merchant_id: merchant_id + 1
+        }
+
+        headers = {"CONTENT_TYPE" => "application/json"}
+
+        post '/api/v1/items/', headers: headers, params: item_params.to_json
+        json = JSON.parse(response.body, symbolize_names: true) 
+
+        expect(response).to have_http_status(404)
+        expect(json[:error]).to eq('Invalid item params')
+      end
     end
   end
 
