@@ -49,7 +49,6 @@ RSpec.describe 'the Item search' do
         get '/api/v1/items/find_all', params: {max_price: 50}
 
         json = JSON.parse(response.body, symbolize_names: true)
-        # require 'pry'; binding.pry
 
         expect(response).to have_http_status(200)
 
@@ -70,9 +69,29 @@ RSpec.describe 'the Item search' do
     end
 
     describe 'sad paths' do 
-      it 'max price cannot be negative'
-      it 'min price cannot be negative'
-      it 'cannot send name and min or max price'
+      it 'max price cannot be negative' do 
+        get '/api/v1/items/find_all', params: {max_price: -5}
+        json = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to have_http_status(400)
+        expect(json[:errors]).to eq('Invalid search parameters')
+      end
+
+      it 'min price cannot be negative' do
+        get '/api/v1/items/find_all', params: {min_price: -50}
+        json = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to have_http_status(400)
+        expect(json[:errors]).to eq('Invalid search parameters')
+      end
+
+      it 'cannot send name and min or max price' do 
+        get '/api/v1/items/find_all', params: {max_price: 50, name: 'Granola'}
+        json = JSON.parse(response.body, symbolize_names: true)
+
+        expect(response).to have_http_status(400)
+        expect(json[:errors]).to eq('Invalid search parameters')
+      end
     end
   end
 end
